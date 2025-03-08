@@ -86,120 +86,47 @@ const PanelComp: React.FC = () => {
         <div
           id="banners"
           className="w-full px-[6px] rounded-md overflow-hidden"
-          style={{ aspectRatio: "2.00561 / 1", maxHeight: "350px" }}
+          style={{ aspectRatio: "2.00561 / 1", maxHeight: "200px" }}
         >
           <div className="w-full relative h-full z-10 rounded-md overflow-hidden">
             <CarousalComp
               content={bannerImages}
-              className="min-w-full min-h-full top-0 left-0 transition-transform duration-500 ease-in-out -translate-x-full"
+              className="min-w-full min-h-full top-0 left-0 transition-transform duration-500 ease-in-out -translate-x-full rounded"
             />
           </div>
         </div>
-        <div className="py-1 px-[2px] w-full">
-          <div className="w-full relative h-full z-10 rounded-md overflow-hidden flex flex-col">
-          <Carousel autoplay dots={false}>
-  {carousalImages.map((item,i) => {
-    return (
-      <div className=" grid grid-cols-2"
-      key={"banner"+i}
-
+        <div className="w-full max-w-5xl mx-auto">
+      <Carousel
+        autoplay
+        autoplaySpeed={2000} // Adjust speed if needed
+        dots={false}
+        infinite
+        slidesToShow={3.5}
+        slidesToScroll={1}
+        responsive={[
+          { breakpoint: 1024, settings: { slidesToShow: 3 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
+          { breakpoint: 480, settings: { slidesToShow: 1 } },
+        ]}
       >
-<div title="QuickButtons-8" className="grid grid-cols-2 gap-2 ">
-        <span title="Fishing games" className="px-[3px] py-[3px]">
-          <div
-            className="relative w-full active:scale-95 cursor-pointer bg-bg_SkeletonBgLoaderColor transition-all ease-in-out duration-150 shadow-quickAccessBtnBoxShadows min-h-9 bg-cover bg-center bg-no-repeat rounded-[4px] overflow-hidden"
-            style={{ backgroundImage: `url(${item?.bgUrl1})` }}
-          >
-            <div className="flex justify-center w-full h-full min-h-9 relative z-10 items-center min-w-[175px] sm:min-w-[240px] md:min-w-[280px] pl-[5px] pt-[2px] pb-[2px] pr-1 opacity-100">
-              <img
-                src={item?.iconUrl1}
-                width="16"
-                height="16"
-                className="w-4 h-4 sm:w-5 sm:h-5 ml-1 autoAnimate"
-                alt="Fishing games-image"
-                loading="lazy"
-                title="Fishing games"
-              />
-              <span className="ml-1 autoAnimate text-text_Quaternary text-xs capitalize pr-[2px] md:text-sm text-nowrap w-full truncate font-lato-bold font-semibold md:font-semibold">
-                {item?.title1}
-              </span>
+        {carousalImages.map((item, i) => (
+          <div className="px-1" key={i}>
+            <div
+              className="relative w-full active:scale-95 cursor-pointer bg-gray-300 transition-all ease-in-out duration-150 shadow-lg min-h-40 h-[50px] px-2 bg-cover bg-center bg-no-repeat rounded-md overflow-hidden"
+              style={{ backgroundImage: `url(${item?.bgUrl1})` }}
+            >
+              <div className="flex justify-center flex-col text-white w-full h-full bg-black/40">
+                {item?.iconUrl1}
+                <span className=" text-xs font-semibold truncate">
+                  {item?.title1}
+                </span>
+              </div>
             </div>
           </div>
-        </span>
-        <span title="Color Game" className="px-[3px] py-[3px]">
-          <div
-            className="relative w-full active:scale-95 cursor-pointer bg-bg_SkeletonBgLoaderColor transition-all ease-in-out duration-150 shadow-quickAccessBtnBoxShadows min-h-9 bg-cover bg-center bg-no-repeat rounded-[4px] overflow-hidden"
-            style={{ backgroundImage: `url(${item?.bgUrl3})` }}
-          >
-            <div className="flex justify-center w-full h-full min-h-9 relative z-10 items-center min-w-[175px] sm:min-w-[240px] md:min-w-[280px] pl-[5px] pt-[2px] pb-[2px] pr-1 opacity-100">
-              <img
-                src={item?.iconUrl3}
-                width="16"
-                height="16"
-                className="w-4 h-4 sm:w-5 sm:h-5 ml-1 autoAnimate"
-                alt="Color Game-image"
-                loading="lazy"
-                title="Color Game"
-              />
-              <span className="ml-1 autoAnimate text-text_Quaternary text-xs capitalize pr-[2px] md:text-sm text-nowrap w-full truncate font-lato-bold font-semibold md:font-semibold">
-                {item?.title3}
-              </span>
-            </div>
-          </div>
-        </span>
-      </div>
-      <div title="QuickButtons-8" className="grid grid-cols-2 gap-2 ">
-        <span title="Fishing games" className="px-[3px] py-[3px]">
-          <div
-            className="relative w-full active:scale-95 cursor-pointer bg-bg_SkeletonBgLoaderColor transition-all ease-in-out duration-150 shadow-quickAccessBtnBoxShadows min-h-9 bg-cover bg-center bg-no-repeat rounded-[4px] overflow-hidden"
-            style={{ backgroundImage: `url(${item?.bgUrl2})` }}
-          >
-            <div className="flex justify-center w-full h-full min-h-9 relative z-10 items-center min-w-[175px] sm:min-w-[240px] md:min-w-[280px] pl-[5px] pt-[2px] pb-[2px] pr-1 opacity-100">
-              <img
-                src={item?.iconUrl2}
-                width="16"
-                height="16"
-                className="w-4 h-4 sm:w-5 sm:h-5 ml-1 autoAnimate"
-                alt="Fishing games-image"
-                loading="lazy"
-                title="Fishing games"
-              />
-              <span className="ml-1 autoAnimate text-text_Quaternary text-xs capitalize pr-[2px] md:text-sm text-nowrap w-full truncate font-lato-bold font-semibold md:font-semibold">
-                {item?.title2}
-              </span>
-            </div>
-          </div>
-        </span>
-        <span title="Color Game" className="px-[3px] py-[3px]">
-          <div
-            className="relative w-full active:scale-95 cursor-pointer bg-bg_SkeletonBgLoaderColor transition-all ease-in-out duration-150 shadow-quickAccessBtnBoxShadows min-h-9 bg-cover bg-center bg-no-repeat rounded-[4px] overflow-hidden"
-            style={{ backgroundImage: `url(${item?.bgUrl4})` }}
-          >
-            <div className="flex justify-center w-full h-full min-h-9 relative z-10 items-center min-w-[175px] sm:min-w-[240px] md:min-w-[280px] pl-[5px] pt-[2px] pb-[2px] pr-1 opacity-100">
-              <img
-                src={item?.iconUrl4}
-                width="16"
-                height="16"
-                className="w-4 h-4 sm:w-5 sm:h-5 ml-1 autoAnimate"
-                alt="Color Game-image"
-                loading="lazy"
-                title="Color Game"
-              />
-              <span className="ml-1 autoAnimate text-text_Quaternary text-xs capitalize pr-[2px] md:text-sm text-nowrap w-full truncate font-lato-bold font-semibold md:font-semibold">
-                {item?.title4}
-              </span>
-            </div>
-          </div>
-        </span>
-      </div>
-      </div>
-      
-    );
-  })}
-</Carousel>
+        ))}
+      </Carousel>
+    </div>
 
-          </div>
-        </div>
         <div title="Trending Games" className="py-1 px-[6px] w-full">
           <div className="flex flex-col w-full bg-bg_Quaternary rounded-[4px] shadow-homeCasinoCardGamesShadow divide-y">
             <div className="flex items-center justify-between w-full pt-0.5 rounded-t-[4px] px-0.5 bg-bg_Quaternary">

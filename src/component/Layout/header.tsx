@@ -179,7 +179,7 @@ const Header: React.FC = () => {
         flex-col items-center"
       >
         <span>Balance</span>
-        <i>{userData?.Balance}</i>
+        <i>{userData?.Balance||0}</i>
       
       </button>
       <button
@@ -189,7 +189,7 @@ const Header: React.FC = () => {
         flex-col items-center"
       >
         <span>Exposure</span>
-        <i>{userData?.Exposure}</i>
+        <i>{userData?.Exposure||0}</i>
       
       </button>
   </div>

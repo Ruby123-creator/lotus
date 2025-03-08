@@ -19,13 +19,26 @@ const contentStyle: React.CSSProperties = {
 const CarousalComp: React.FC<CarousalProp> = ({content,className}) =>{ 
     
     return(
-  <Carousel autoplay dots={false}>
+  <Carousel
+  
+  autoplay
+  autoplaySpeed={2000} // Adjust speed if needed
+  dots={false}
+  infinite
+  slidesToShow={1.5}
+  slidesToScroll={1}
+  responsive={[
+    { breakpoint: 1024, settings: { slidesToShow: 2 } },
+    { breakpoint: 768, settings: { slidesToShow: 1.5 } },
+    { breakpoint: 480, settings: { slidesToShow: 1 } },
+  ]}
+ >
      {
                     (content||[]).map((item: any,i:number)=>{
                         return(
                             <div
                             key={"carousalContent"+i}
-
+                             className='px-2'
                             >
                            <img src={item?.imgPath}
                             className={className}

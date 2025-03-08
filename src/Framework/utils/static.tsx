@@ -9,28 +9,28 @@ import { GiCirclingFish } from "react-icons/gi";
 import { icons } from "antd/es/image/PreviewGroup";
 
 export const bannerImages = [{
-    imgPath:"assets/images/banner/banner-1-unicon-SCJtuYQ9.jpg",
+    imgPath:"assets/images/banner/banner-1-lotus.webp",
     alt:"Banner Img 1"
 },
 
 {
-    imgPath:"assets/images/banner/banner-2-unicon-_c1DIV87.jpg",
+    imgPath:"assets/images/banner/banner-1-lotus.webp",
      alt:"Banner Img 2"
 },
 {
-    imgPath:"assets/images/banner/banner-3-unicon-ggHzAQpn.jpg",
+    imgPath:"assets/images/banner/banner-6-lotus.webp",
      alt:"Banner Img 3"
 },
 {
-    imgPath:"assets/images/banner/banner-4-unicon-B1kiJQ_E.jpg",
+    imgPath:"assets/images/banner/banner-3-lotus.webp",
      alt:"Banner Img 4"
 },
 {
-    imgPath:"assets/images/banner/banner-5-unicon-DgIV6Wle.jpg",
+    imgPath:"assets/images/banner/banner-4-lotus.webp",
      alt:"Banner Img 5"
 },
 {
-  imgPath:"assets/images/banner/banner-6-unicon-CBpczhu1.jpg",
+  imgPath:"assets/images/banner/banner-5-lotus.webp",
    alt:"Banner Img 5"
 },
 ]
@@ -107,48 +107,39 @@ export const socialLinks = [{
 
 export const carousalImages = [
 {
-  title1: 'Evolution',
-  bgUrl1: 'assets/images/gaming/Evolution-1705911275808.jpeg',
-  iconUrl1:
-    'https://promotions-material.s3.ap-south-1.amazonaws.com/quickButtons/Evolution-1705911275817?q=65&amp;w=600&amp;px=auto&amp;auto=format',
-  altText1: 'Evolution-image',
-  title2: 'Sportsbook',
-  bgUrl2: 'assets/images/gaming/Sportsbook-1705911352020.jpeg',
-  iconUrl2:
-    'https://promotions-material.s3.ap-south-1.amazonaws.com/quickButtons/Sportsbook-1705911352029?q=65&amp;w=600&amp;px=auto&amp;auto=format',
-  altText2: 'Evolution-image',
-  title3: 'Live Casinos',
-  bgUrl3: 'assets/images/gaming/LiveCasinos-1705911704269.jpeg',
-  iconUrl3:
-    'https://promotions-material.s3.ap-south-1.amazonaws.com/quickButtons/Sportsbook-1705911352029?q=65&amp;w=600&amp;px=auto&amp;auto=format',
-  altText3: 'Evolution-image',
-  title4: 'E-Cricket',
-  bgUrl4: 'assets/images/gaming/e-Cricket-1705911799120.jpeg',
-  iconUrl4:
-    'https://promotions-material.s3.ap-south-1.amazonaws.com/quickButtons/Sportsbook-1705911352029?q=65&amp;w=600&amp;px=auto&amp;auto=format',
-  altText4: 'Evolution-image',
+  title1: 'Cricket',
+  bgUrl1: 'assets/images/gaming/cricket-bg.png',
+  iconUrl1: <BiSolidCricketBall size={20}/>,
+  altText1: 'cricket-image',
+  
 },
 {
-  title1: 'Multiplayer Games',
-  bgUrl1: 'assets/images/gaming/MultiplayerGames-1705912077487.jpeg',
-  iconUrl1:
-    'https://promotions-material.s3.ap-south-1.amazonaws.com/quickButtons/Evolution-1705911275817?q=65&amp;w=600&amp;px=auto&amp;auto=format',
-  altText1: 'Evolution-image',
-  title2: 'Slot Games',
-  bgUrl2: 'assets/images/gaming/SlotGames-1705912015298.jpeg',
-  iconUrl2:
-    'https://promotions-material.s3.ap-south-1.amazonaws.com/quickButtons/Sportsbook-1705911352029?q=65&amp;w=600&amp;px=auto&amp;auto=format',
-  altText2: 'Evolution-image',
-  title3: 'Fishing Games',
-  bgUrl3: 'assets/images/gaming/Fishinggames-1705912252625.jpeg',
-  iconUrl3:
-    'https://promotions-material.s3.ap-south-1.amazonaws.com/quickButtons/Sportsbook-1705911352029?q=65&amp;w=600&amp;px=auto&amp;auto=format',
-  altText3: 'Evolution-image',
-  title4: 'Color Game',
-  bgUrl4: 'assets/images/gaming/SlotGames-1705912015298.jpeg',
-  iconUrl4:
-    'https://promotions-material.s3.ap-south-1.amazonaws.com/quickButtons/Sportsbook-1705911352029?q=65&amp;w=600&amp;px=auto&amp;auto=format',
-  altText4: 'Evolution-image',
+  title1: 'Football',
+  bgUrl1: 'assets/images/gaming/football-bg.png',
+  iconUrl1: <BiFootball size={20}/>,
+  altText1: 'football-image',
+  
+},
+{
+  title1: 'Tennis',
+  bgUrl1: 'assets/images/gaming/tennis-bg.png',
+  iconUrl1: <IoTennisball size={20}/>,
+  altText1: 'tennis-image',
+  
+},
+{
+  title1: 'Horse Racing',
+  bgUrl1: 'assets/images/gaming/horse-bg.png',
+  iconUrl1: <img alt="horse" src="/icons/white-horse.svg" width={20} height={20}/>,
+  altText1: 'horse-image',
+  
+},
+{
+  title1: 'Greyhound',
+  bgUrl1: 'assets/images/gaming/greyhound-bg.png',
+  iconUrl1: <img alt="horse" src="/icons/white_greyhound.svg" width={20} height={20}/>,
+  altText1: 'greyhound-image',
+  
 },
 // Add more button objects here
 ];
