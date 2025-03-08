@@ -16,59 +16,9 @@ import HeaderMenu from "./menu";
 import { FaRegUserCircle } from "react-icons/fa";
 import SignUp_Modal from "../modals/signup";
 import { FaAngleDown } from "react-icons/fa6";
-const   items: MenuProps['items'] = [
-  {
-    label: <a target="_blank" rel="noopener noreferrer" href="/my-bets">
-  My Bets
-</a>,
- 
-  key:41,
-  
-},
 
-{
-  label: <a target="_blank" rel="noopener noreferrer" href="/declare-bets">
-Betting Profit and Loss
-</a>,
- 
-  key:42,
-  
-},
-{
-  label: <a target="_blank" rel="noopener noreferrer" href="/account-statement">
-Account Statement
-</a>,
- 
-  key:43,
-  
-},
-// {
-//   label: <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-// Market Analysis
-// </a>,
- 
-//   key:44,
-  
-// },
-{
-  label: <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-Rules & Regulations
-</a>,
- 
-  key:44,
-  
-},
-{
-  label: <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-Change Password
-</a>,
- 
-  key:44,
-  
-},
-]
 const Header: React.FC = () => {
-  const {isLogin,setLoginModal,isLoginAsDemo,userData,loginModal} = useUI();
+  const {isLogin,setLoginModal,isLoginAsDemo,userData,loginModal,loginData} = useUI();
   const [currentDate, setCurrentDate] = useState("");
   const [currentTime, setCurrentTime] = useState("");
   const [search, setSearch] = useState("");
@@ -76,13 +26,53 @@ const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
    console.log(userData,"gipeeee");
   const [openDrawer, setOpenDrawer] = useState(false);
-  const showDrawer = () => {
-    setOpenDrawer(true);
-  };
+ 
   const Navigate = useNavigate();
-  const onClose = () => {
-    setOpenDrawer(false);
-  };
+  const   items: MenuProps['items'] = [
+    {
+      label: <span onClick={()=>Navigate('/my-bets')}> My Bets</span>
+   
+,
+   
+    key:41,
+    
+  },
+  
+  {
+    label:<span onClick={()=>Navigate('/declare-bets')}>  Betting Profit and Loss</span>,
+   
+    key:42,
+    
+  },
+  {
+    label: <span onClick={()=>Navigate('/account-statement')}>Account Statement</span>,
+   
+    key:43,
+    
+  },
+  // {
+  //   label: <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+  // Market Analysis
+  // </a>,
+   
+  //   key:44,
+    
+  // },
+  // {
+  //   label: <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+  // Rules & Regulations
+  // </a>,
+   
+  //   key:44,
+    
+  // },
+  {
+    label: <span onClick={()=>Navigate('/change-password')}>Change Password</span>,
+   
+    key:44,
+    
+  },
+  ]
  
 
   // Function to format the date and time using date-fns
@@ -155,7 +145,7 @@ const Header: React.FC = () => {
                     </a>
                   </div>
                 </div>
-                <div className=" flex justify-around items-center gap-5">
+            
                 <div
                   id="currentDateTime"
                   className=" hidden font-lato lg:block "
@@ -167,10 +157,11 @@ const Header: React.FC = () => {
                   
                   </div>
                 </div>
+                <div className=" flex justify-around items-center gap-5">
 {
   isLogin ? <div
                  
-  className=" hidden font-lato lg:block "
+  className=" hidden font-lato lg:block px-5"
 >
   <div className="  flex gap-2 px-2 text-[12px]">
   <button
@@ -199,7 +190,7 @@ const Header: React.FC = () => {
                 
                 <div
                   id="searchBox"
-                  className="text-text_Quaternary relative hidden max-w-12 font-lato lg:block flex-grow"
+                  className="text-text_Quaternary px-5 relative hidden max-w-12 font-lato lg:block flex-grow"
                 >
                   <div className=" relative w-full">
                     <input
@@ -217,35 +208,12 @@ const Header: React.FC = () => {
                     />
                   </div>
                 </div>
-                </div>
-               
-               
-
-                <div className="w-max flex items-center justify-center w-[35%] ">
-                  {/* <div
-                    id="mobileSearchIcon"
-                    className="lg:hidden mr-[2px] flex items-center justify-center"
-                  >
-                    <span className="bg-none border-none shadow-none px-1">
-                      <svg
-                        fill="#fff"
-                        className=""
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"></path>
-                      </svg>
-                    </span>
-                  </div> */}
-
-                  {isLogin ? (
+                {isLogin ? (
                     <>
                       {" "}
                       <div
                         id="loginName"
-                        className="text-text_Quaternary text-[10px] lg:text-[10px] font-semibold xl:flex flex-col px-2 hidden"
+                        className="text-text_Quaternary text-[10px] lg:text-[10px] font-semibold xl:flex flex-col px-2 hidden px-5"
                       >
                         <div className="flex gap-0.5 text-white/80  text-nowrap whitespace-nowrap">
                           Login as
@@ -256,7 +224,7 @@ const Header: React.FC = () => {
                         <div className="flex  gap-0.5 text-white/80  text-nowrap whitespace-nowrap">
                           Last logged in
                           <span className="font-medium text-text_Quaternary">
-                            20/12/2024, 07:55
+                            {loginData?.loginTime}
                           </span>
                         </div>
                       </div>
@@ -268,7 +236,7 @@ const Header: React.FC = () => {
                           
                         >
                           
-                          <Dropdown menu={{ items }} placement="bottom" arrow>
+                          <Dropdown menu={{ items }} placement="bottomLeft" arrow  trigger={['click']}>
                           <span className=" text-x lg:text-xxs text-text_Quaternary1  font-normal font-lato md:font-semibold lg:text-xs md:text-sm xs:text-xs -lg:font-[800] flex items-center">
                            <IoSettingsSharp stroke="#ffecc6"/> Account <FaAngleDown stroke="#ffecc6"/>
                           </span>
@@ -321,13 +289,16 @@ const Header: React.FC = () => {
                               <span className="shimmer"></span>
                             </button>
                           </a>
+                          <Dropdown menu={{ items }} placement="bottomLeft" arrow  trigger={['click']}>
                           <button
                             title="Balance"
                             className=" leading-normal relative overflow-hidden  transition duration-150 ease-in-out  rounded-full text-text_Quaternary  pl-3 bg-bg_Secondary flex items-center justify-center pr-1 py-1 xs:py-1 sm:py-2  gap-1 shadow-[0_8px_30px_rgb(0,0,0,0.12)]  cursor-pointer"
                             type="button"
                           >
                             <span className="text-xs sm:text-base font-semibold bg-transparent">
-                              ₹0
+                            ₹{( 
+    (userData?.Balance || 0) - (userData?.Exposure < 0 ? Math.abs(userData?.Exposure || 0) : 0) 
+).toFixed(2)}
                             </span>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -350,6 +321,8 @@ const Header: React.FC = () => {
                               <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                             </svg>
                           </button>
+</Dropdown>
+                         
                         </div>
                       </div>
                     </>
@@ -375,6 +348,10 @@ const Header: React.FC = () => {
                     </div>
                   )}
                 </div>
+               
+               
+
+               
               </div>
            <HeaderMenu/>
         

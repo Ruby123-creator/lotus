@@ -57,7 +57,7 @@ const Password = () => {
   };
 
   return (
-    <div className="w-full md:mt-0 lg:overflow-auto lg:w-[54%]" style={{ minHeight: "calc(-110px + 100dvh)" }}>
+    <div className="w-full md:mt-[30px] lg:overflow-auto lg:w-[54%]" style={{ minHeight: "calc(-110px + 100dvh)" }}>
       <div title="Change Password" className="p-2 space-y-2 mx-2 my-2 rounded-lg bg-bg_Quaternary shadow">
         <form onSubmit={handleSubmit} autoComplete="off">
           <div className="flex flex-col gap-2 font-lato">

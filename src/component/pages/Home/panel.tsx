@@ -95,24 +95,12 @@ const PanelComp: React.FC = () => {
             />
           </div>
         </div>
-        <div className="w-full max-w-5xl mx-auto">
-      <Carousel
-        autoplay
-        autoplaySpeed={2000} // Adjust speed if needed
-        dots={false}
-        infinite
-        slidesToShow={3.5}
-        slidesToScroll={1}
-        responsive={[
-          { breakpoint: 1024, settings: { slidesToShow: 3 } },
-          { breakpoint: 768, settings: { slidesToShow: 2.5 } },
-          { breakpoint: 480, settings: { slidesToShow: 2 } },
-        ]}
-      >
+        <div className="w-full max-w-5xl mx-auto flex gap-2">
+ 
         {carousalImages.map((item, i) => (
-          <div className="px-1" key={i}>
+          <div className="px-1" key={i} style={{width:"25%"}}>
             <div
-              className="relative w-full active:scale-95 cursor-pointer bg-gray-300 transition-all ease-in-out duration-150 shadow-lg min-h-40 h-[50px] px-2 bg-cover bg-center bg-no-repeat rounded-md overflow-hidden"
+              className="relative w-full active:scale-95 cursor-pointer bg-gray-300 transition-all ease-in-out duration-150 w-[150px] shadow-lg min-h-40 h-[50px] px-2 bg-cover bg-center bg-no-repeat rounded-md overflow-hidden"
               style={{ backgroundImage: `url(${item?.bgUrl1})` }}
             >
               <div className="flex justify-center flex-col text-white w-full h-full bg-black/40">
@@ -124,7 +112,7 @@ const PanelComp: React.FC = () => {
             </div>
           </div>
         ))}
-      </Carousel>
+      
     </div>
 
         <div title="Trending Games" className="py-1 px-[6px] w-full">

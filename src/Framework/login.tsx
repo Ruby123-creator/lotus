@@ -4,6 +4,7 @@ import { API_ENDPOINTS } from './utils/api-endpoints';
 import { logOut, showToasterMessage } from './utils/constant';
 import { verify } from 'crypto';
 import { error } from 'console';
+import { format } from 'date-fns';
 interface VerifyResponse {
   uniqid: string;
   flag:boolean
@@ -50,7 +51,9 @@ export const useLoginPassword = () => {
   return useMutation({
     mutationFn: login, // Function that makes the API call
     onSuccess: ({data,userData}) => {
-      const val = { username: (userData?.UserName||'').toLowerCase(), uniqid: data?.uniqid  };
+      const time = Date.now();
+      const val = { username: (userData?.UserName||'').toLowerCase(), uniqid: data?.uniqid ,  loginTime: format(time, "dd/MM/yyyy, HH:mm") // Correct format
+      };
       console.log(val,data,userData,"RYBUUUU")
         if(data?.status  === "success"){
           localStorage.setItem('credentials', JSON.stringify(val));

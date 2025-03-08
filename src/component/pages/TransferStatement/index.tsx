@@ -51,19 +51,20 @@ const TransferStatement: React.FC = () => {
     <div className="flex flex-col transition-all lg:pt-[110px] ease-in-out duration-100 pt-[94px]">
       <div className="flex items-start justify-start w-full lg:px-12 xl:px-20 xlg:px-24">
         <SidebarComp />
-        <div className="w-full lg:w-[50%] px-2 py-4 pt-[18px] my-[13px] lg:pt-0 lg:my-0" style={{ minHeight: "calc(-110px + 100dvh)" }}>
+        <div className="w-full lg:w-[50%] md:mt-[30px] px-2 py-4 pt-[18px] my-[13px] lg:pt-0 lg:my-0" style={{ minHeight: "calc(-110px + 100dvh)" }}>
           <div className="flex flex-col h-full">
             <div className="z-10">
               <div className="w-full grid grid-cols-12 gap-3 p-3 bg-bg_Quaternary z-50 font-lato">
                 <div className="col-span-10 px-2 flex items-center justify-between">
+                <div className="datepicker-container">
+                    <DatePicker onChange={EndDate}   value={endDate ? dayjs(endDate) : null} 
+ className="w-full" />
+                  </div>
                   <div className="datepicker-container">
                     <DatePicker   value={startDate ? dayjs(startDate) : null} 
  onChange={fromDate} className="w-full" />
                   </div>
-                  <div className="datepicker-container">
-                    <DatePicker onChange={EndDate}   value={endDate ? dayjs(endDate) : null} 
- className="w-full" />
-                  </div>
+                  
                 </div>
                 <div className="active:scale-95 col-span-2 bg-titleGrd p-2 rounded relative right-2 flex sm:items-center justify-center"   onClick={()=>{
                   setPayload({
