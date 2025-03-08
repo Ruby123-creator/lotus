@@ -95,7 +95,7 @@ const PanelComp: React.FC = () => {
             />
           </div>
         </div>
-        <div className="w-full max-w-5xl mx-auto flex gap-2">
+        <div className="w-full max-w-5xl mx-auto flex gap-2 overflow-hidden">
  
         {carousalImages.map((item, i) => (
           <div className="px-1" key={i} style={{width:"25%"}}>
@@ -117,7 +117,7 @@ const PanelComp: React.FC = () => {
 
         <div title="Trending Games" className="py-1 px-[6px] w-full">
           <div className="flex flex-col w-full bg-bg_Quaternary rounded-[4px] shadow-homeCasinoCardGamesShadow divide-y">
-            <div className="flex items-center justify-between w-full pt-0.5 rounded-t-[4px] px-0.5 bg-bg_Quaternary">
+            <div className="flex items-center justify-between w-full rounded-t-[4px] bg-bg_Quaternary">
               <TrendingGames />
             </div>
           </div>

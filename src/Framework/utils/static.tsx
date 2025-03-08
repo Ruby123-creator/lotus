@@ -7,6 +7,7 @@ import { IoIosJet, IoIosMail, IoLogoWhatsapp } from "react-icons/io";
 import { IoTennisball } from "react-icons/io5";
 import { GiCirclingFish } from "react-icons/gi";
 import { icons } from "antd/es/image/PreviewGroup";
+import { title } from "process";
 
 export const bannerImages = [{
     imgPath:"assets/images/banner/banner-1-lotus.webp",
@@ -104,6 +105,33 @@ export const socialLinks = [{
       icon: <BsInstagram size={25} fill="var(--color-quaternary)"/>
     },
   ]
+
+export const banner =[
+  {
+  title:"wingogames",
+  url:"https://tezcdn.io/casino/casino-highlight/wingogames-730-280.gif"
+},
+{
+  title:"fungames",
+  url:"https://tezcdn.io/casino/casino-highlight/fungames-730_280.gif"
+},
+{
+  title:"aviator",
+  url:"https://tezcdn.io/casino/casino-highlight/aviator-730-280.gif"
+},
+{
+  title:"evoplay",
+  url:"https://tezcdn.io/casino/casino-highlight/evoplay-730-280.gif"
+},
+{
+  title:"sportsbook",
+  url:"assets/images/sportsbook.webp"
+},
+{
+  title:"mac",
+  url:"https://tezcdn.io/casino/casino-highlight/mac88-730*280.webp"
+},
+]
 
 export const carousalImages = [
 {
