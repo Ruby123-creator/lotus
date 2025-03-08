@@ -30,7 +30,7 @@ const CarousalComp: React.FC<CarousalProp> = ({content,className}) =>{
   responsive={[
     { breakpoint: 1024, settings: { slidesToShow: 2 } },
     { breakpoint: 768, settings: { slidesToShow: 1.5 } },
-    { breakpoint: 480, settings: { slidesToShow: 1 } },
+    { breakpoint: 450, settings: { slidesToShow: 1 } },
   ]}
  >
      {

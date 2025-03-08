@@ -7446,7 +7446,7 @@ video {
     --color-fancyStopwatchIconColor: #454545;
     --color-percentageIconColor: #4caf50;
     --color-deleteIconColor: #ef4444;
-    --color-text-primary: #c10931;
+    --color-text-primary: #21896e;
     --color-text-secondary: #21896e;
     --color-text-bgGray100: #f3f4f6;
     --color-text-bgGray300: #d1d5db;
@@ -7669,7 +7669,7 @@ video {
     --color-bg-transactionInitiatedBg: linear-gradient(89deg, #618cbe, #536c8a 89.28%);
     --color-bg-betListHeader: linear-gradient(89deg, #c10931, #6e081d 89.28%);
     --color-bg-betListHeader1: linear-gradient(89deg, #6e081d, #c10931 89.28%);
-    --color-bg-contactUsCard: linear-gradient(to bottom left, #6e081d, #c10931);
+    --color-bg-contactUsCard: linear-gradient(to bottom left, #0e7057, #3bab8e);
     --color-bg-bonus: linear-gradient(90deg, #4c0ad8, #c509c9);
     --color-bg-bonus1: linear-gradient(90deg, #ffb700, #ffd466, #ffb800);
     --color-bg-GiftCardBg: linear-gradient(90deg, #743899, #9b1d39);

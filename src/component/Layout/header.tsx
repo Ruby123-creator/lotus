@@ -121,6 +121,7 @@ const Header: React.FC = () => {
                     <button
                       className=" leading-normal relative overflow-hidden  transition duration-150 ease-in-out bg-none border-none h-full flex items-center justify-center active:scale-150  w-[100%] shadow-none px-1 cursor-pointer"
                       type="button"
+                      onClick={()=>{setMobileDrawer(true)}}
                     >
                       <span>
                         <svg
@@ -221,7 +222,7 @@ const Header: React.FC = () => {
                
 
                 <div className="w-max flex items-center justify-center w-[35%] ">
-                  <div
+                  {/* <div
                     id="mobileSearchIcon"
                     className="lg:hidden mr-[2px] flex items-center justify-center"
                   >
@@ -237,7 +238,7 @@ const Header: React.FC = () => {
                         <path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"></path>
                       </svg>
                     </span>
-                  </div>
+                  </div> */}
 
                   {isLogin ? (
                     <>
