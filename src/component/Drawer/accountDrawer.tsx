@@ -47,7 +47,7 @@ const drawerElement = [
         title:"Open Bets",
         icon: <TbStars  size={20}/>,
         id:22,
-        route:"/open-bets"
+        route:"/my-bets"
     },
     {
         title:"Betting Profit & Loss",
