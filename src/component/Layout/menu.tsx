@@ -17,11 +17,11 @@ const HeaderMenu = () => {
   return (
     <div className="flex flex-col">
       <div className="flex w-full overflow-x-auto no-scrollbar bg-bg_Quaternary p-1 items-start md:items-center md:justify-center">
-        <a href="/">
+        {/* <a href="/">
           <button className="text-xs cursor-pointer uppercase mr-1 active:border-primary rounded-full text-nowrap whitespace-nowrap font-semibold bg-bg_Ternary8 hover:bg-bg_Ternary9 border w-max px-3  py-1  text-text_HeaderDeskNavMenuHover  md:hidden ">
             <span className="font font-lato text-[12px]">Home</span>
           </button>
-        </a>
+        </a> */}
         {(headerMenu || []).map((item, i) => {
           return (
             <span key={`menu${i}`}>
@@ -46,7 +46,7 @@ const HeaderMenu = () => {
           );
         })}
        
-        {(mobileHeaderMenu || []).map((item, i) => {
+        {/* {(mobileHeaderMenu || []).map((item, i) => {
           return (
             <span className="md:hidden"
             key={"mobileMenu"+i}
@@ -73,7 +73,7 @@ const HeaderMenu = () => {
               </button>
             </span>
           );
-        })}
+        })} */}
         
         
       </div>

@@ -31,44 +31,27 @@ interface Props{
     openDrawer:any
 }
 const drawerElement = [
-    {
-    title:"Help & Support",
-    id:1,
-    items:[
-        {
-        title:"Chat With Us",
-        icon: <IoChatboxEllipsesOutline stroke="var(--color-iconsColor)" size={20}/>,
-        id:11,
-        route:"/"
-    },
-    // {
-    //     title:"Download APK",
-    //     icon: <GoDownload stroke="var(--color-iconsColor)" size={20}/>,
-    //     id:12,
-    //     route:"/"
-    // },
-]
-},
+//    
 
 {
     title:"Statements",
     id:2,
     items:[
-        {
-        title:"Transactions",
-        icon: <GrTransaction stroke="var(--color-iconsColor)" size={20}/>,
-        id:21,
-        route:"/transactions"
-    },
+    //     {
+    //     title:"Transactions",
+    //     icon: <GrTransaction  size={20}/>,
+    //     id:21,
+    //     route:"/transactions"
+    // },
     {
         title:"Open Bets",
-        icon: <TbStars stroke="var(--color-iconsColor)" size={20}/>,
+        icon: <TbStars  size={20}/>,
         id:22,
         route:"/open-bets"
     },
     {
-        title:"Declare Bets",
-        icon: <TbStars stroke="var(--color-iconsColor)" size={20}/>,
+        title:"Betting Profit & Loss",
+        icon: <TbStars size={20}/>,
         id:22,
         route:"/declare-bets"
     },
@@ -84,12 +67,12 @@ const drawerElement = [
         id:24,
         route:"/account-statement"
     },
-    {
-        title:"Transfer Statement",
-        icon: <GrDocumentTransfer stroke="var(--color-iconsColor)" size={20}/>,
-        id:25,
-        route:"/transfer-statement"
-    },
+    // {
+    //     title:"Transfer Statement",
+    //     icon: <GrDocumentTransfer stroke="var(--color-iconsColor)" size={20}/>,
+    //     id:25,
+    //     route:"/transfer-statement"
+    // },
 ]
 },
 // {
@@ -224,7 +207,7 @@ const AccountDrawer : React.FC<Props> = ({openDrawer}) => {
                                     className=" font-lato text-sm font-medium text-text_Danger">₹ {((userData?.Exposure||0)>0 ? 0 : (userData?.Exposure||0)).toFixed(2)}</span>
                             </div>
                         </div>
-                        <div className="flex col-span-2 items-center justify-center  w-full ">
+                        {/* <div className="flex col-span-2 items-center justify-center  w-full ">
                             <div id="deposit_withdraw_btn" className="flex items-center justify-center w-full gap-1"><button
                                     className=" leading-normal relative overflow-hidden  transition duration-150 ease-in-out  flex bg-none border-none shadow-none w-full cursor-pointer"
                                     type="button"
@@ -245,7 +228,7 @@ const AccountDrawer : React.FC<Props> = ({openDrawer}) => {
                                         className="text-text_Quaternary capitalize border  flex rounded px-3 py-1 flex-col text-[10px]  hover:opacity-100 w-full font-semibold items-center justify-center  bg-bg_HomeWithdrawBtnBgColor border-withDrawBtn ">
                                           <img src="/icons/withdraw.svg" alt="My Icon" width={20} height={20} />
                                            withdraw</span></button></div>
-                        </div>
+                        </div> */}
                     </li>
                     <div className="flex flex-wrap p-2 w-full gap-2 items-center justify-center font-roboto"></div>
                    

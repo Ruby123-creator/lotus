@@ -278,7 +278,7 @@ const Header: React.FC = () => {
                           </span>
                         </div>
                         <div className=" flex justify-between items-center gap-x-1 h-max lg:hidden">
-                          <a href="deposit/">
+                          {/* <a href="deposit/">
                             <button
                               type="button"
                               className=" leading-normal  transition duration-150 ease-in-out overflow-hidden relative active:scale-95 hidden xxs:flex items-center h-fit justify-center bg-bg_Quaternary rounded-full px-3 py-1 sm:px-4 sm:py-1.5 text-text_Primary   text-sm   text-center  cursor-pointer"
@@ -288,12 +288,13 @@ const Header: React.FC = () => {
                               </span>
                               <span className="shimmer"></span>
                             </button>
-                          </a>
-                          <Dropdown menu={{ items }} placement="bottomLeft" arrow  trigger={['click']}>
+                          </a> */}
+                          {/* <Dropdown menu={{ items }} placement="bottomLeft" arrow  trigger={['click']}> */}
                           <button
                             title="Balance"
                             className=" leading-normal relative overflow-hidden  transition duration-150 ease-in-out  rounded-full text-text_Quaternary  pl-3 bg-bg_Secondary flex items-center justify-center pr-1 py-1 xs:py-1 sm:py-2  gap-1 shadow-[0_8px_30px_rgb(0,0,0,0.12)]  cursor-pointer"
                             type="button"
+                            onClick={()=>setOpenDrawer(true)}
                           >
                             <span className="text-xs sm:text-base font-semibold bg-transparent">
                             ₹{( 
@@ -321,13 +322,14 @@ const Header: React.FC = () => {
                               <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                             </svg>
                           </button>
-</Dropdown>
+{/* </Dropdown> */}
                          
                         </div>
                       </div>
                     </>
                   ) : (
-                    <div className="w-max items-center justify-center gap-10 lg:rounded-full flex -lg:rounded">
+                    <>
+                    <div className="w-max items-center justify-center gap-10 lg:rounded-full flex -lg:rounded hidden md:block">
                       <button
                         id="loginButton"
                         onClick={() => setLoginModal(true)}
@@ -346,6 +348,29 @@ const Header: React.FC = () => {
                       </button>
                      
                     </div>
+                    <div className="w-max items-center justify-center gap-2 lg:rounded-full flex -lg:rounded block md:hidden">
+                      <button
+                        id="loginButton"
+                        onClick={() => setLoginModal(true)}
+                        className=" text-text_Ternary py-1 px-2 rounded secondaybtn font-normal font-lato  flex 
+        flex-col items-center"
+                      >
+                        Log In
+                      
+                      </button>
+                      <button
+                        id="loginButton"
+                        onClick={() => setLoginModal(true)}
+                        className=" py-1 px-2 rounded bg-bg_Quaternary text-text_Ternary font-normal font-lato  flex 
+        flex-col items-center"
+                      >
+                       Sign up
+                      
+                      </button>
+                     
+                    </div>
+                    </>
+                    
                   )}
                 </div>
                

@@ -156,7 +156,7 @@ export const carousalImages = [
   
 },
 {
-  title1: 'Horse Racing',
+  title1: 'Horse',
   bgUrl1: 'assets/images/gaming/horse-bg.png',
   iconUrl1: <img alt="horse" src="/icons/white-horse.svg" width={20} height={20}/>,
   altText1: 'horse-image',
