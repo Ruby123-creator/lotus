@@ -136,6 +136,7 @@ export const banner =[
 export const carousalImages = [
 {
   title1: 'Cricket',
+  url:'/cricket',
   bgUrl1: 'assets/images/gaming/cricket-bg.png',
   iconUrl1: <BiSolidCricketBall size={20}/>,
   altText1: 'cricket-image',
@@ -143,6 +144,8 @@ export const carousalImages = [
 },
 {
   title1: 'Football',
+  url:'/soccer',
+
   bgUrl1: 'assets/images/gaming/football-bg.png',
   iconUrl1: <BiFootball size={20}/>,
   altText1: 'football-image',
@@ -150,6 +153,8 @@ export const carousalImages = [
 },
 {
   title1: 'Tennis',
+  url:'/tennis',
+
   bgUrl1: 'assets/images/gaming/tennis-bg.png',
   iconUrl1: <IoTennisball size={20}/>,
   altText1: 'tennis-image',
@@ -157,6 +162,8 @@ export const carousalImages = [
 },
 {
   title1: 'Horse',
+  url:'/Horse-Racing',
+
   bgUrl1: 'assets/images/gaming/horse-bg.png',
   iconUrl1: <img alt="horse" src="/icons/white-horse.svg" width={20} height={20}/>,
   altText1: 'horse-image',
@@ -164,6 +171,8 @@ export const carousalImages = [
 },
 {
   title1: 'Greyhound',
+  url:'/Greyhound-Racing',
+
   bgUrl1: 'assets/images/gaming/greyhound-bg.png',
   iconUrl1: <img alt="horse" src="/icons/white_greyhound.svg" width={20} height={20}/>,
   altText1: 'greyhound-image',

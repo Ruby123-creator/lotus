@@ -19,7 +19,9 @@ import { IoTennisball } from "react-icons/io5";
 import CasinoProvider from "../../common/casinoProvider";
 import { useSportFixture } from "../../../Framework/sportsData";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 const PanelComp: React.FC = () => {
+  const Navigate = useNavigate();
    const uiLabel = {
       sidebarIcon:<BiSolidCricketBall fill="var(--color-quaternary)" size={20}/>,
       sportsName: "Football",
@@ -98,7 +100,7 @@ const PanelComp: React.FC = () => {
         <div className="w-full max-w-5xl mx-auto flex gap-2 overflow-hidden">
  
         {carousalImages.map((item, i) => (
-          <div className="px-1" key={i} style={{width:"25%"}}>
+          <div className="px-1" key={i} style={{width:"25%"}} onClick={()=>Navigate(`/sports-page${item?.url}`)}>
             <div
               className="relative w-full active:scale-95 cursor-pointer bg-gray-300 transition-all ease-in-out duration-150 w-[150px] shadow-lg min-h-40 h-[50px] px-2 bg-cover bg-center bg-no-repeat rounded-md overflow-hidden"
               style={{ backgroundImage: `url(${item?.bgUrl1})` }}

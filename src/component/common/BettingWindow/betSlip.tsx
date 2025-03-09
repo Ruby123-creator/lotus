@@ -100,7 +100,8 @@ const BetSlip: React.FC = () => {
       return false;
     }
     // Check user status and balance
-    if (userData.status === "deactive" || (Number(userData?.Balance)-Number(userData?.Exposure)) < sum ) {
+    
+    if (userData.status === "deactive" || (Number(userData?.Balance)-Number(Math.abs(userData?.Exposure))) < sum ) {
       showToasterMessage({ messageType: "error", description: "LOW BALANCE" });
       return false;
     }
@@ -234,8 +235,9 @@ const BetSlip: React.FC = () => {
       setTimer((prevTimer) => {
         if (prevTimer <= 0) {
           clearInterval(intervalRef.current!);
-          setBetProcessed(false);
           if(prevTimer === 0){
+            setBetProcessed(false);
+
           const canPlaceBet = checkBetCondition();
           if (canPlaceBet) {
             placeBet();
@@ -430,7 +432,7 @@ const BetSlip: React.FC = () => {
           </button>
           <div className="w-[50%] max-w-[170px] h-max">
             <button
-              disabled={!sum}
+              disabled={!sum||betProcessed}
               onClick={()=>handleConfirmBet()}
               type="button"
               className={`leading-normal overflow-hidden transition duration-150 ease-in-out py-1 relative w-full flex min-h-[46px] px-2.5 rounded-md font-medium border flex-row items-center justify-between ${

@@ -87,7 +87,7 @@ const HeaderMenu = () => {
                 type="button"
                 onClick={()=>Navigate("/")}
               >
-                <FaAngleLeft size={16} fill="#C10B32"/>
+                <FaAngleLeft size={16} fill="#21896e"/>
               
               </button>
             </div>

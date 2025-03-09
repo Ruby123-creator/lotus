@@ -171,7 +171,7 @@ const Header: React.FC = () => {
         flex-col items-center"
       >
         <span>Balance</span>
-        <i>{userData?.Balance||0}</i>
+        <i>{ (Number(userData?.Balance)-Number(Math.abs(userData?.Exposure)))}</i>
       
       </button>
       <button
@@ -333,19 +333,20 @@ const Header: React.FC = () => {
                       <button
                         id="loginButton"
                         onClick={() => setLoginModal(true)}
-                        className="text-x lg:text-xxs text-text_Quaternary1  font-normal font-lato md:font-semibold lg:text-xs md:text-sm xs:text-xs -lg:font-[800]"
+                        className="text-x lg:text-xxs text-text_Quaternary1  font-normal font-lato md:font-semibold lg:text-xs md:text-sm xs:text-xs -lg:font-[800] px-5"
                       >
                         Log in
                       
                       </button>
-                      <button
+                      <a
                         id="loginButton"
-                        onClick={() => setLoginModal(true)}
+                         href="https://api.whatsapp.com/send?phone=237659701650"
+                        target="_blank"
                         className="text-x lg:text-xxs text-text_Quaternary1  font-normal font-lato md:font-semibold lg:text-xs md:text-sm xs:text-xs -lg:font-[800]"
                       >
                        Sign up
                       
-                      </button>
+                      </a>
                      
                     </div>
                     <div className="w-max items-center justify-center gap-2 lg:rounded-full flex -lg:rounded block md:hidden">
@@ -358,15 +359,16 @@ const Header: React.FC = () => {
                         Log In
                       
                       </button>
-                      <button
+                      <a
                         id="loginButton"
-                        onClick={() => setLoginModal(true)}
+                        href="https://api.whatsapp.com/send?phone=237659701650"
+                        target="_blank"
                         className=" py-1 px-2 rounded bg-bg_Quaternary text-text_Ternary font-normal font-lato  flex 
         flex-col items-center"
                       >
                        Sign up
                       
-                      </button>
+                      </a>
                      
                     </div>
                     </>
