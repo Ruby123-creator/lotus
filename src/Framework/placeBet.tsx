@@ -45,22 +45,21 @@ export const useCurrentBetsData = () => {
 };
 
 
-const fetchAllBetsData = async (user:string) => {
+const fetchAllBetsData = async (data:any) => {
   try {
-    const response = await axios.get(`${API_ENDPOINTS.ALLBETS}?UserName=${user}`);
-    return response.data?.bets;
+    const response = await axios.get(`${API_ENDPOINTS.ALLBETS}?from=${data?.startDate}&to=${data?.endDate}&UserName=${data?.userName}`);
+    return response.data?.data;
   } catch (error) {
     console.log(error,"ERROR::::::::::")
   }
- 
+
 };
 
 // React Query Hook
-export const useAllBetsData = () => {
-  const {userData} = useUI();
+export const useAllBetsData = (data:any) => {
   return useQuery({
-    queryKey: ['allBets-detail',userData?.UserName], // Include `id` for query uniqueness
-    queryFn: () => fetchAllBetsData(userData?.UserName), // Fetch function
+    queryKey: ['allBets-detail',data], // Include `id` for query uniqueness
+    queryFn: () => fetchAllBetsData(data), // Fetch function
     retry: 3,                 // Retry on failure
     refetchOnWindowFocus: false, // No auto-refetch on focus
   });

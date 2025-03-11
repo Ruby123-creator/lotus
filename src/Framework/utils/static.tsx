@@ -390,19 +390,21 @@ export const casinoProviders = [{
   ]
 
 
- export const headerMenu = [
+  export const headerMenu = [
   
     { title: "Cricket", routing: "/sports-page/cricket" },
     { title: "Football", routing: "/sports-page/soccer" },
     { title: "Tennis", routing: "/sports-page/tennis" },
     { title: "Horse Racing", routing: "/sports-page/Horse-Racing" },
     { title: "GreyHound Racing", routing: "/sports-page/Greyhound-Racing" },
-    { title: "Aura", routing: "/aura" },
+    
     { title: "Aviator", routing: "/aviator" },
     { title: "Live Casino", routing: "/casino-lobby/casino" },
     { title: "Slots", routing: "/casino-lobby/slot-games" },
-    { title: "Crash Games", routing: "/casino-lobby/slot-games/Crash" },
-    { title: "Fishing Games", routing: "/casino-lobby/slot-games/Shooting" },
+    { title: "Crash Games", routing: "/casino-lobby/crash" },
+    { title: "Fishing Games", routing: "/casino-lobby/shooting" },
+    { title: "Lottery", routing: "/casino-lobby/lottery" },
+
   ];
 
   export const mobileHeaderMenu = [

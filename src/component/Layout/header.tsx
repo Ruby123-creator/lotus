@@ -171,7 +171,7 @@ const Header: React.FC = () => {
         flex-col items-center"
       >
         <span>Balance</span>
-        <i>{ (Number(userData?.Balance)-Number(Math.abs(userData?.Exposure)))}</i>
+        <i>{ userData?.Balance ? (Number(userData?.Balance)-Number(Math.abs(userData?.Exposure))) :0}</i>
       
       </button>
       <button
@@ -246,7 +246,7 @@ const Header: React.FC = () => {
 
                         <button
                          onClick={()=>{
-                          logOut();
+                          logOut(userData?.UserName);
                          }}
                           
                         >

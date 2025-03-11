@@ -23,7 +23,7 @@ export const useChangePassword = () => {
     onSuccess: (data) => {
       if(data?.status === "success"){
         showToasterMessage({messageType:"success",description:data?.message});
-      logOut();
+      logOut(data?.UserName);
       }
       else{
         showToasterMessage({messageType:"error",description:data?.message});
@@ -85,7 +85,7 @@ const loginVerify = async ({ uniqid, username }: { uniqid: string; username: str
   );
 
   if (response.status === 200 && response.data && response?.data?.flag) {
-       logOut();
+       logOut(username);
     return response.data;
   }
 

@@ -35,10 +35,10 @@ const Statements : React.FC<Props> = ({data}) => {
                     className="border-b border-gray-200 hover:bg-gray-50 text-xs"
                   >
                     <td className="p-2">{bet.index}</td>
-                    <td className=" p-2">{bet.credit}</td>
+                    <td className=" p-2 text-text_Profit">{bet.credit}</td>
                     
                    
-                    <td className="p-2">{bet.debit}</td>
+                    <td className="p-2 text-text_Danger">{bet.debit}</td>
                     <td className="p-2">₹ {bet.balance}</td>
                    
                     <td className="p-2"> {bet.time}</td>
