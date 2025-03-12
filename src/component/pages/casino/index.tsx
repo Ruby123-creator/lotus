@@ -36,8 +36,8 @@ const CasinoGames = () => {
       className="w-full md:mt-[0px] lg:overflow-auto lg:w-[54%]"
       style={{ minHeight: "calc(-54px + 100dvh)" }}
     >
-        
-      <div>
+      {
+        data?.url ? <div>
         <iframe
           src={`${data?.url}/games/wl-${getUrlQueries()}/wl.games.${getUrlQueries()}`}
           className=""
@@ -46,14 +46,16 @@ const CasinoGames = () => {
             top: 0,
             left: 0,
             width: "100vw",
-            paddingTop:"130px",
+            paddingTop:"100px",
             height: "100vh",
             border: "none",
           }}
           title="My iFrame"
           
         />
-      </div>
+      </div>:""
+      }  
+      
     </div>
   );
 };

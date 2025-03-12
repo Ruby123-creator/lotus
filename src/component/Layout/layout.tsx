@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [loading, setLoading] = useState(true);
     const location = useLocation(); // Now it's inside Router
-  
+    console.log(location,"CHICAGO")
     useEffect(() => {
       console.log("Route changed:", location.pathname);
     }, [location.pathname]);
@@ -35,7 +35,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     loading ? <PageLoader/> :<>
      <Header />
     <main className='app-bg'>{children}</main>
-    <Footer />
+    {
+      ((location.pathname||"").split("/")||[])[1] !== "casino-lobby" ?     <Footer />
+      :""
+    }
     </>
   }
    

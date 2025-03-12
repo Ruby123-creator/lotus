@@ -37,7 +37,7 @@ const EventPanel: React.FC = () => {
     //  if (isLoading) return <p>Loading...</p>;
     //  if (isError) return <p>Error fetching data</p>;
   return (
-    <div className="w-full md:mt-[30px]   lg:overflow-auto pt-[130px] lg:pt-0"
+    <div className="w-full md:mt-[30px]   lg:overflow-auto pt-[94px] lg:pt-0"
     style={{minHeight: "calc(-110px + 100dvh)"}}>
       {
         data ? <div className="no-scrollbar min-h-[calc(100dvh-56px)] md:mb-3">

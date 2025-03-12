@@ -1,7 +1,11 @@
 import React from 'react'
-import { casinoProviders } from '../../../Framework/utils/static'
+import { casinoCards, casinoProviders } from '../../../Framework/utils/static'
+import { useUI } from '../../../context/ui.context'
+import { useNavigate } from 'react-router-dom';
 
 const CasinoProvider: React.FC = () => {
+  const {userData,setLoginModal,isLogin} = useUI();
+  const navigate = useNavigate();
   return (
      <div
                  id="scrollShow"
@@ -12,26 +16,35 @@ const CasinoProvider: React.FC = () => {
                    
                    
                 {
-                   (casinoProviders||[]).map((item: any,i: number)=>{
+                   (casinoCards||[]).map((item: any,i: number)=>{
                        return(
                            <button
 
-                           className="leading-normal relative overflow-hidden transition-all bg-bg_CasinoProvider ease-in-out duration-100 flex xxs:min-w-[80px] xs:min-w-[100px] sm:min-w-[150px] min-h-[45px] md:min-h-[60px] px-5 py-2 flex-col items-center justify-center gap-1 rounded-[12px] border-2 rounded-2 border-quaternary text-text_Quaternary whitespace-nowrap uppercase font-lato font-[700] text-xs hover:scale-105 shadow-homeCasinoCardGamesShadow cursor-pointer"
+                           className="leading-normal relative overflow-hidden transition-all bg-bg_CasinoProvider ease-in-out duration-100 flex min-h-[45px] md:min-h-[60px] flex-col items-center justify-center gap-1 rounded-[12px] border-2 rounded-2 border-quaternary text-text_Quaternary whitespace-nowrap uppercase font-lato font-[700] text-xs hover:scale-105 shadow-homeCasinoCardGamesShadow cursor-pointer"
                            type="button"
                            title="Yggdrasil"
+                           onClick={()=>{
+                            if(isLogin){
+                              navigate("/casino-lobby/casino");
+
+                            }
+                            else{
+                              setLoginModal(true);
+                            }
+                           }}
                            key={`CasinoProvider`+i}
                          >
                            <div
                              title="InPlayAndPopulars"
                              id="banners"
-                             className="py-2 flex items-center flex-col justify-center w-[80px] h-[50px]"
+                             className="flex items-center flex-col justify-center w-[80px] h-[50px]"
                            >
                              <img
-                               src={item?.imgPath}
+                               src={item?.img}
                                width="80"
                                height="40"
                                className="rounded rounded-8"
-                               alt="Yggdrasil"
+                               alt={item?.alt}
                                loading="lazy"
                                title="Yggdrasil"
                              />

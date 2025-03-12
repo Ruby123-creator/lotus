@@ -109,27 +109,38 @@ export const socialLinks = [{
 export const banner =[
   {
   title:"wingogames",
-  url:"https://tezcdn.io/casino/casino-highlight/wingogames-730-280.gif"
+  url:"https://tezcdn.io/casino/casino-highlight/wingogames-730-280.gif",
+  path:"/casino-lobby/slot-games"
 },
 {
   title:"fungames",
-  url:"https://tezcdn.io/casino/casino-highlight/fungames-730_280.gif"
+  url:"https://tezcdn.io/casino/casino-highlight/fungames-730_280.gif",
+  path:"/casino-lobby/crash"
+
 },
 {
   title:"aviator",
-  url:"https://tezcdn.io/casino/casino-highlight/aviator-730-280.gif"
+  url:"https://tezcdn.io/casino/casino-highlight/aviator-730-280.gif",
+  path:"/aviator"
+
 },
 {
   title:"evoplay",
-  url:"https://tezcdn.io/casino/casino-highlight/evoplay-730-280.gif"
+  url:"https://tezcdn.io/casino/casino-highlight/evoplay-730-280.gif",
+  path:"/casino-lobby/shooting"
+
 },
 {
   title:"sportsbook",
-  url:"assets/images/sportsbook.webp"
+  url:"assets/images/sportsbook.webp",
+  path:"/casino-lobby/lottery"
+
 },
 {
   title:"mac",
-  url:"https://tezcdn.io/casino/casino-highlight/mac88-730*280.webp"
+  url:"https://tezcdn.io/casino/casino-highlight/mac88-730*280.webp",
+  path:"/casino-lobby/casino"
+
 },
 ]
 
@@ -417,183 +428,79 @@ export const casinoProviders = [{
     { title: "Crash Games", routing: "/casino-lobby/slot-games/Crash" ,icon: <img src="/icons/aviator.svg" alt="My Icon" width={20} height={20} />},
     { title: "Fishing Games", routing: "/casino-lobby/slot-games/Shooting" ,icon:<GiCirclingFish size={20} fill="#c10931"/>},
   ];
-  export const casinoCards =[{
-    img:"/assets/1x2gaming-D40uNj3a.svg"
+  export const casinoCards =[
+    {
+    img:"/assets/images/providers/casino-prov-1.webp",
+    alt:'img-1'
   },
-{
- img:"/assets/7mojos-Py1bIlTK.svg" 
-},{
-  img:"/assets/ad-lunam-b7fE7vWv.svg"
-},
-{
-  img:"https://luckmedia.link/providers/aux/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/btr/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/Bet_Games-DQk1EkcT.svg"
-},
-{
-  img:"https://luckmedia.link/providers/btg/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/blg/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/bng/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/cqc/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
+  {
+    img:"/assets/images/providers/casino-prov-2.webp",
+    alt:'img-2'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-3.webp",
+    alt:'img-3'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-4.webp",
+    alt:'img-4'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-5.webp",
+    alt:'img-5'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-6.webp",
+    alt:'img-6'
+  },
+  
+  {
+    img:"/assets/images/providers/casino-prov-7.webp",
+    alt:'img-7'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-8.webp",
+    alt:'img-8'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-9.webp",
+    alt:'img-9'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-10.webp",
+    alt:'img-10'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-11.webp",
+    alt:'img-11'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-12.webp",
+    alt:'img-12'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-13.webp",
+    alt:'img-13'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-14.webp",
+    alt:'img-14'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-15.webp",
+    alt:'img-15'
+  },
+  
+  {
+    img:"/assets/images/providers/casino-prov-16.webp",
+    alt:'img-16'
+  },
+  {
+    img:"/assets/images/providers/casino-prov-17.webp",
+    alt:'img-17'
+  },
+  
 
-{
-  img:"/assets/dragonsoft-CjyAhXve.svg"
-},
-{
-  img:"/assets/elk-provider-B53cQllv.svg"
-},
-{
-  img:"https://luckmedia.link/providers/end/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/evo/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/evo-play-B4a-CkvN.svg"
-},
-{
-  img:"https://luckmedia.link/providers/ezg/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/fa-chai-D6An2gCp.svg"
-},
-{
-  img:"https://luckmedia.link/providers/fnt/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/fgs/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/galaxsys-DOOEwUo_.svg"
-},
-{
-  img:"/assets/gameart-C8h1_IIc.svg"
-},
-{
-  img:"/assets/gamingCorps-CksWDq3n.svg"
-},
-{
-  img:"https://luckmedia.link/providers/gmz/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/hbn/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/hcw/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/ho-gaming-CAWkGdU2.svg"
-},
-{
-  img:"/assets/irondogstudio-qDFHAY_U.svg"
-},
-{
-  img:"/assets/kalamba-games-TZ5_nARA.svg"
-},
-{
-  img:"https://luckmedia.link/providers/kir/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/mnn/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/mbl/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/ntn/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/net-game-entertainment-BL5nhYPW.svg"
-},
-{
-  img:"https://luckmedia.link/providers/nlc/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/omi-gaming-C9z3wx9J.svg"
-},
-{
-  img:"/assets/onetouch-gaming-BSAfsh0z.svg"
-},
-{
-  img:"https://luckmedia.link/providers/onl/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/png/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/plt/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/pnt/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/prospect-gaming-B0R8Xne-.svg"
-},
-{
-  img:"https://luckmedia.link/providers/psh/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/qps/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/rtg/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/reg/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/revolver-gaming-D-XDe58E.svg"
-},
-{
-  img:"/assets/rival-powered-C0NPKyGi.svg"
-},
-{
-  img:"/assets/rtg-slots-D2KdxDUZ.svg"
-},
-{
-  img:"/assets/SA-Gaming-BUOAf51M.svg"
-},
-{
-  img:"/assets/skywind-gaming-DZg2XH3X.svg"
-},
-{
-  img:"/assets/slotmill-games-CzuoVJKU.svg"
-},
-{
-  img:"/assets/SpearheadStudios-CmYqcAbu.svg"
-},
-{
-  img:"https://luckmedia.link/providers/spb/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"https://luckmedia.link/providers/tdk/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/Triple-PG-DlqaSDFS.svg"
-},
-{
-  img:"/assets/turbo-games-BaS9dDhA.svg"
-},
-{
-  img:"/assets/vivo-gaming-DgqeW9vk.svg"
-},
-{
-  img:"https://luckmedia.link/providers/wzd/logo_3_2_cl_dark.svg?q=65&amp;amp;w=600&amp;amp;px=auto&amp;amp;auto=format"
-},
-{
-  img:"/assets/woohoo-gaming-BXurIsks.svg"
-}
 ]
 
 export const baccarats=[{
