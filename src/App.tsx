@@ -28,6 +28,7 @@ import { useAdminDetails, useLoginVerificationQuery } from './Framework/login';
 import { useUI } from './context/ui.context';
 import DeclareBets from './component/pages/DeclareBets';
 import CasinoGames from './component/pages/casino';
+import CasinoReport from './component/pages/CasinoReport';
 
 
 const App: React.FC = () => {
@@ -86,6 +87,8 @@ const {data: userData} = useAdminDetails({isLogin:isLoginAsUser,username:val?.us
 
          <Route path='/my-bets' element={<OpenBets/>}/>
          <Route path='/declare-bets' element={<DeclareBets/>}/>
+         <Route path='/casino-report' element={<CasinoReport/>}/>
+
 
          <Route path='/settings' element={<TimeSetting/>}/>
       </Routes>

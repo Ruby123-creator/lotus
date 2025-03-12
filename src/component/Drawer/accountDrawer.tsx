@@ -67,12 +67,12 @@ const drawerElement = [
         id:24,
         route:"/account-statement"
     },
-    // {
-    //     title:"Transfer Statement",
-    //     icon: <GrDocumentTransfer stroke="var(--color-iconsColor)" size={20}/>,
-    //     id:25,
-    //     route:"/transfer-statement"
-    // },
+    {
+        title:"Casino Report",
+        icon: <GrDocumentTransfer size={20}/>,
+        id:25,
+        route:"/casino-report"
+    },
 ]
 },
 // {

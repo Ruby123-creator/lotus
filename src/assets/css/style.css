@@ -6759,7 +6759,9 @@ video {
 .text-text_CricketScorecolor2 {
     color: var(--color-text-CricketScorecolor2)
 }
-
+.bg-casinoheader{
+    background-color: var(--color-bg-casinoheader);
+}
 .text-text_Danger {
     color: var(--color-text-danger)
 }
@@ -7553,7 +7555,7 @@ video {
     --color-bg-disableBackGroundColorfForPlaceBetBtn: #979797;
     --color-bg-openBetsBubbleBg: #f8b144;
     --color-bg-inputBorderColor: #f2f2f2;
-
+    --color-bg-casinoheader: orangered;
     --color-bg-primary1: #f9df10;
     --color-bg-eventTabColor: #fbb5c4;
     --color-bg-fancyPremiumTabBorderColors: #666;

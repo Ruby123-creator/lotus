@@ -50,6 +50,12 @@ const Header: React.FC = () => {
     key:43,
     
   },
+  {
+    label: <span onClick={()=>Navigate('/casino-report')}>Casino Report</span>,
+   
+    key:44,
+    
+  },
   // {
   //   label: <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
   // Market Analysis

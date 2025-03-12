@@ -4,6 +4,8 @@ import CarousalComp from "../../common/carousal";
 import { BsSuitSpadeFill } from "react-icons/bs";
 import { AiOutlineFire } from "react-icons/ai";
 import UpcomingEvents from "../../common/UpComingEvents";
+import { AiFillFire } from "react-icons/ai";
+
 import {
   bannerImages,
   cardGames,
@@ -136,14 +138,14 @@ const PanelComp: React.FC = () => {
         {/* Casino Providers */}
         <div title="casino Providers" className="py-1 px-[6px] w-full">
           <div className="flex flex-col w-full bg-bg_Quaternary rounded-[4px] shadow-homeCasinoCardGamesShadow divide-y">
-            <div className="flex items-center w-full py-2 px-2.5 gap-2.5 rounded-t-[4px] bg-bg_Quaternary">
-                <AiOutlineFire fill="var(--color-iconsColor)"/>
+            <div className="flex items-center w-full py-2 px-2.5 gap-2.5 rounded-t-[4px] bg-casinoheader">
+                <AiFillFire fill="#ffff" size={20}/>
             
               <div className="w-[100%] flex flex-row justify-between">
-                <span className="text-text_Ternary font-semibold capitalize">
+                <span className="text-text_Quaternary font-semibold capitalize">
                   casino Providers
                 </span>
-                <div className="flex w-[108.75px] items-center justify-end gap-[5px]">
+                {/* <div className="flex w-[108.75px] items-center justify-end gap-[5px]">
                   <button
                     className="inline-block relative overflow-hidden font-lato text-text_DepositTextColor font-semibold text-[12px] leading-[18px] transition-all ease-in-out duration-200 cursor-pointer"
                     type="button"
@@ -166,97 +168,23 @@ const PanelComp: React.FC = () => {
 
                     
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           <CasinoProvider/>
           </div>
         </div>
-        <div title="Indian Card Games" className="py-1 px-[6px] w-full">
-          <div className="flex flex-col w-full bg-bg_Quaternary rounded-[4px] shadow-homeCasinoCardGamesShadow divide-y">
-            <div className="flex items-center w-full py-2 px-2.5 gap-2.5 rounded-t-[4px] bg-bg_Quaternary">
-              <BsSuitSpadeFill fill="var(--color-iconsColor)" />
-
-              <div className="w-[100%] flex flex-row justify-between">
-                <span className="text-text_Ternary font-semibold capitalize">
-                  Indian Card Games
-                </span>
-                <div className="flex w-[108.75px] items-center justify-end gap-[5px]">
-                  <button
-                    className="inline-block relative overflow-hidden font-lato text-text_DepositTextColor font-semibold text-[12px] leading-[18px] transition-all ease-in-out duration-200 cursor-pointer"
-                    type="button"
-                  >
-                    See All
-                  </button>
-                  <button
-                    className="leading-normal relative overflow-hidden transition duration-150 ease-in-out flex w-[22px] h-[22px] p-1 justify-center items-center gap-[10px] text-text_Primary border bg-bg_Foundation rounded cursor-pointer"
-                    type="button"
-                  >
-                    <FaAngleLeft stroke="var(--color-primary)" size={10}/>
-
-                   
-                  </button>
-                  <button
-                    className="leading-normal relative overflow-hidden transition duration-150 ease-in-out flex w-[22px] h-[22px] p-1 justify-center items-center gap-[10px] text-text_Primary border bg-bg_Foundation rounded cursor-pointer"
-                    type="button"
-                  >
-                    <FaAngleRight stroke="var(--color-primary)" size={10}/>
-
-                    
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div
-              id="scrollShow"
-              className="py-2.5 px-2.5 transition-all ease-in-out duration-200 w-full h-max overflow-x-auto"
-            >
-              <div className="grid grid-rows-3 grid-flow-col gap-y-2 w-max md:w-full gap-x-[6px]">
-                {(cardGames || []).map((item, i) => {
-                  return (
-                    <div
-                    key={"cardGames"+i}
-                    onClick={()=>{
-                      if(isLogin){
-                        Navigate("/casino-lobby/casino");
-
-                      }
-                      else{
-                        setLoginModal(true);
-                      }
-                     }}
-                    className="flex w-[120px] sm:w-[180px] md:w-[140px] flex-col items-center justify-center cursor-pointer transition-all ease-in-out duration-100">
-                      <div className="w-full bg-transparent flex flex-col transition-all ease-in-out duration-200 relative overflow-hidden rounded-[4px]">
-                        <div className="aspect-[1.00] w-[120px] sm:w-[180px] md:w-[140px]">
-                          <img
-                            src={item?.imgPath}
-                            width="500"
-                            height="auto"
-                            className="w-full h-full object-cover rounded-[6px] hover:scale-[103%] transition-all ease-in-out duration-200"
-                            alt="Super Over"
-                            loading="lazy"
-                            title="Super Over"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
+       
         <div title="Popular Games" className="py-1 px-[6px] w-full">
           <div className="flex flex-col w-full bg-bg_Quaternary rounded-[4px] shadow-homeCasinoCardGamesShadow divide-y">
-            <div className="flex items-center w-full py-2 px-2.5 gap-2.5 rounded-t-[4px] bg-bg_Quaternary">
-              <AiOutlineFire fill="var(--color-iconsColor)" />
+            <div className="flex items-center w-full py-2 px-2.5 gap-2.5 rounded-t-[4px] bg-casinoheader">
+              <AiFillFire fill="#ffff" size={20} />
 
               <div className="w-[100%] flex flex-row justify-between">
-                <span className="text-text_Ternary font-semibold capitalize">
+                <span className="text-text_Quaternary font-semibold capitalize">
                   Popular Games
                 </span>
-                <div className="flex w-[108.75px] items-center justify-end gap-[5px]">
+                {/* <div className="flex w-[108.75px] items-center justify-end gap-[5px]">
                   <button
                     className="inline-block relative overflow-hidden font-lato text-text_DepositTextColor font-semibold text-[12px] leading-[18px] transition-all ease-in-out duration-200 cursor-pointer"
                     type="button"
@@ -279,7 +207,7 @@ const PanelComp: React.FC = () => {
 
                     
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
             <div

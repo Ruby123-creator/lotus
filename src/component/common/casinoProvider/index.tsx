@@ -9,9 +9,9 @@ const CasinoProvider: React.FC = () => {
   return (
      <div
                  id="scrollShow"
-                 className="py-2.5 px-2.5 transition-all ease-in-out duration-200 w-full h-max overflow-x-auto"
+                 className=" transition-all ease-in-out duration-200 w-full h-max overflow-x-auto scroll"
                >
-                 <div className="min-w-full grid grid-rows-3 grid-flow-col gap-2">
+                 <div className="px-2 py-2 min-w-full grid grid-rows-2 grid-flow-col gap-1">
                   
                    
                    
@@ -20,7 +20,7 @@ const CasinoProvider: React.FC = () => {
                        return(
                            <button
 
-                           className="leading-normal relative overflow-hidden transition-all bg-bg_CasinoProvider ease-in-out duration-100 flex min-h-[45px] md:min-h-[60px] flex-col items-center justify-center gap-1 rounded-[12px] border-2 rounded-2 border-quaternary text-text_Quaternary whitespace-nowrap uppercase font-lato font-[700] text-xs hover:scale-105 shadow-homeCasinoCardGamesShadow cursor-pointer"
+                           className=""
                            type="button"
                            title="Yggdrasil"
                            onClick={()=>{
@@ -37,12 +37,11 @@ const CasinoProvider: React.FC = () => {
                            <div
                              title="InPlayAndPopulars"
                              id="banners"
-                             className="flex items-center flex-col justify-center w-[80px] h-[50px]"
+                             className="flex py-1 my-1 items-center flex-col justify-center w-[100px] h-[50px]"
                            >
                              <img
                                src={item?.img}
-                               width="80"
-                               height="40"
+                              
                                className="rounded rounded-8"
                                alt={item?.alt}
                                loading="lazy"
