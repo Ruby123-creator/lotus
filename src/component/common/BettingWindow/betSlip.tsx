@@ -5,9 +5,9 @@ import { Modal } from "antd";
 import { CiStopwatch } from "react-icons/ci";
 import { useParams } from "react-router-dom";
 import { useSportDetailsById, useCricketFancyData } from "../../../Framework/sportsData";
-import { useIPDetails } from "../../../Framework/login";
-import { checkTimeDifference, extractDetails, showToasterMessage } from "../../../Framework/utils/constant";
-import {  usePlaceBet } from "../../../Framework/placeBet";
+import { fetchIPAdress, useAdminDetails, useIPDetails } from "../../../Framework/login";
+import { checkTimeDifference, extractDetails, extractEventDetails, showToasterMessage } from "../../../Framework/utils/constant";
+import { usePlaceBet } from "../../../Framework/placeBet";
 import { format, isToday, isTomorrow, parse } from "date-fns";
 import { useCurrentBetsData } from "../../../Framework/placeBet";
 
@@ -54,6 +54,7 @@ const BetSlip: React.FC = () => {
   const {data:fancyData} = useCricketFancyData(eventId);
   const { data:ipAddress} = useIPDetails();
   const { mutate: placingBet, isError: error } = usePlaceBet();
+  
   const [sum, setSum] = useState<number>(0);
   const [edit, setEdit] = useState<boolean>(false);
   const [betProcessed, setBetProcessed] = useState<boolean>(false);
@@ -84,10 +85,11 @@ const BetSlip: React.FC = () => {
 
          return eventData;
    }
-
+  // const eventData = betOdds?.betType === "session" ? fancyData?.session as EventData[] :(betOdds?.betType === "odd" ? ((matchData||[])[0]?.events) as EventData[]:matchData as EventData[]);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
    
- 
+  const isPlacingBet = useRef(false); // Track ongoing API request
+
    
   const checkBetCondition = (): boolean => {
     
@@ -99,7 +101,6 @@ const BetSlip: React.FC = () => {
       return false;
     }
     // Check user status and balance
-    
     if (userData.status === "deactive" || (Number(userData?.Balance)-Number(Math.abs(userData?.Exposure))) < sum ) {
       showToasterMessage({ messageType: "error", description: "LOW BALANCE" });
       return false;
@@ -185,13 +186,17 @@ const BetSlip: React.FC = () => {
 
     }
     
-
+  // Helper function to place a bet
   const placeBet = () => {
+    if (isPlacingBet.current) return; // Prevent duplicate API calls
+  isPlacingBet.current = true; // Set flag
     if (!userData || !betOdds || !data) return;
     const checkCurrentBet = (getEventData()||[])?.find((item) => (item?.RunnerName === betOdds?.runnerName||item?.nation === betOdds?.runnerName));
     const eventInfo = extractDetails(checkCurrentBet?.title)
-     console.log(eventInfo,"eventsss")
+     console.log(eventInfo,"eventsss","fitnesss")
     const now = new Date();
+    setBetProcessed(false);
+
     const bettingData = {
       userName: userData.UserName,
       eventName: `${eventInfo?.team1} v ${eventInfo?.team2}` ,
@@ -211,23 +216,28 @@ const BetSlip: React.FC = () => {
       section: sport === "greyhound_racecard"? "greyhound" : sport === "horseRacing_racecard" ? "horserace" : sport,
       bhav: betOdds?.size
     };
-    placingBet({data:bettingData,sport});
+    placingBet(
+      { data: bettingData, sport },
+      {
+        onSuccess: () => {
+          isPlacingBet.current = false; // Reset flag after success
+        },
+        onError: () => {
+          isPlacingBet.current = false; // Reset flag after failure
+        }
+      }
+    );
     setMatchedBets({...betOdds,odds:0,amount:0})
-    // fetchCurrentBetsData(userData.UserName);
     showToasterMessage({ messageType: "success", description: "Bet placed successfully" });
   };
   
   // Handle bet confirmation
   const handleConfirmBet = () => {
-    if (betProcessed) return; // Prevent multiple triggers while the countdown is running
-
-    // Check bet conditions before proceeding
-    const canPlaceBet = checkBetCondition();
-    if (!canPlaceBet) {
-      return; // Stop if conditions are not met
-    }
+    if (betProcessed || isPlacingBet.current) return; // Prevent duplicate triggers
   
-    // Start the countdown and bet processing
+    const canPlaceBet = checkBetCondition();
+    if (!canPlaceBet) return;
+  
     setBetProcessed(true);
     setTimer(2);
   
@@ -235,23 +245,16 @@ const BetSlip: React.FC = () => {
       setTimer((prevTimer) => {
         if (prevTimer <= 0) {
           clearInterval(intervalRef.current!);
-          if(prevTimer === 0){
-            setBetProcessed(false);
-
-          const canPlaceBet = checkBetCondition();
-          if (canPlaceBet) {
-            console.log("GHEEEEEE")
+          if (!isPlacingBet.current) {
             placeBet();
-
           }
-          }
-          // Place the bet only once when the timer reaches 0
           return 0;
         }
         return prevTimer - 1;
       });
     }, 1000);
   };
+  
   const calculateMaxAmount = (val: string | number): number => {
     if (typeof val === "number") {
       return val;
@@ -415,9 +418,7 @@ const BetSlip: React.FC = () => {
             <button
               className="inline-block relative overflow-hidden transition duration-150 ease-in-out col-span-3 w-full text-[10px] font-semibold rounded-[4px] bg-clearBtnGrd text-text_Quaternary leading-4 py-2 cursor-pointer"
               type="button"
-              onClick={() => {
-                // setMatchedBets({betOdds,amount:0})
-                setSum(0)}}
+              onClick={() => setSum(0)}
             >
               CLEAR
             </button>
@@ -428,7 +429,7 @@ const BetSlip: React.FC = () => {
         <div className="flex items-center justify-center gap-x-[13px] pt-3.5 w-full">
           <button
             type="button"
-            className="leading-normal relative overflow-hidden transition duration-150 ease-in-out px-2 py-2.5 w-[40%] max-w-[156px] flex items-center justify-center min-h-[46px] text-sm bg-transperent text-text_BetSlipCancelBtnColor font-medium border border-primary rounded-md cursor-pointer"
+            className="leading-normal relative overflow-hidden transition duration-150 ease-in-out px-2 py-2.5 w-[40%] max-w-[156px] flex items-center justify-center min-h-[46px] text-sm bg-transperent text-text_BetSlipCancelBtnColor font-medium border border-danger rounded-md cursor-pointer"
             onClick={() => setMatchedBets({ ...betOdds, odds: "" })}
           >
             <span className="text-text_Danger font-bold text-xs leading-5">Cancel Bet</span>
@@ -456,7 +457,7 @@ const BetSlip: React.FC = () => {
                 <span>
                   <CiStopwatch fill="var(--color-quaternary)" size={16} fontSize={20} />
                 </span>
-                <span className={`font-normal ${sum ? "text-text_Quaternary" : "text-text_Ternary"}`}>2s</span>
+                <span className={`font-normal ${sum ? "text-text_Quaternary" : "text-text_Ternary"}`}>7s</span>
               </span>
             </button>
           </div>
