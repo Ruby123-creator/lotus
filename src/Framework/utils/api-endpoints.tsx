@@ -1,4 +1,5 @@
 
+
 const url2 = 'https://sonyexch.in/get-json'
 const url3 = 'https://silverexch24.com/'
 const url = url2;
@@ -20,6 +21,23 @@ export const API_ENDPOINTS = {
     ACCOUNT_STATEMENT: `${url3}account_statement_api`,
     QTECH_URL:`${url3}fun_api_qtech`,
     LOGOUT:`${url3}logout_api`,
-    CASINO_HISTORY: `${url3}casino_history_api`
-   
+    CASINO_HISTORY: `${url3}casino_history_api`,
+    SCORECARDS: `${url}?filepath=score_card`,
+    PLACEBET:`${url3}`
+
 }
+
+// Back
+
+// addprofit in that team 
+// others team minus BsExposure
+
+// Lay
+
+// minusexposure in that team
+// others team add profit
+
+
+// runnername filter,back- (caluculate total profitloss of that team) - (total exposire of other teams) (same for team1 ,team2,team3)
+// runnername filter , lay - (caluculate total profitloss of that team) + (total exposire of other teams) (same for team1 ,team2,team3)
+//event name se filter kro

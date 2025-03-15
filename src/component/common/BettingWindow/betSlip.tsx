@@ -5,9 +5,9 @@ import { Modal } from "antd";
 import { CiStopwatch } from "react-icons/ci";
 import { useParams } from "react-router-dom";
 import { useSportDetailsById, useCricketFancyData } from "../../../Framework/sportsData";
-import { fetchIPAdress, useAdminDetails, useIPDetails } from "../../../Framework/login";
-import { checkTimeDifference, extractDetails, extractEventDetails, showToasterMessage } from "../../../Framework/utils/constant";
-import { usePlaceBet } from "../../../Framework/placeBet";
+import { useIPDetails } from "../../../Framework/login";
+import { checkTimeDifference, extractDetails, showToasterMessage } from "../../../Framework/utils/constant";
+import {  usePlaceBet } from "../../../Framework/placeBet";
 import { format, isToday, isTomorrow, parse } from "date-fns";
 import { useCurrentBetsData } from "../../../Framework/placeBet";
 
@@ -54,7 +54,6 @@ const BetSlip: React.FC = () => {
   const {data:fancyData} = useCricketFancyData(eventId);
   const { data:ipAddress} = useIPDetails();
   const { mutate: placingBet, isError: error } = usePlaceBet();
-  
   const [sum, setSum] = useState<number>(0);
   const [edit, setEdit] = useState<boolean>(false);
   const [betProcessed, setBetProcessed] = useState<boolean>(false);
@@ -85,7 +84,7 @@ const BetSlip: React.FC = () => {
 
          return eventData;
    }
-  // const eventData = betOdds?.betType === "session" ? fancyData?.session as EventData[] :(betOdds?.betType === "odd" ? ((matchData||[])[0]?.events) as EventData[]:matchData as EventData[]);
+
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
    
  
@@ -186,7 +185,7 @@ const BetSlip: React.FC = () => {
 
     }
     
-  // Helper function to place a bet
+
   const placeBet = () => {
     if (!userData || !betOdds || !data) return;
     const checkCurrentBet = (getEventData()||[])?.find((item) => (item?.RunnerName === betOdds?.runnerName||item?.nation === betOdds?.runnerName));
@@ -213,7 +212,8 @@ const BetSlip: React.FC = () => {
       bhav: betOdds?.size
     };
     placingBet({data:bettingData,sport});
-    setMatchedBets({...betOdds,odds:0})
+    setMatchedBets({...betOdds,odds:0,amount:0})
+    // fetchCurrentBetsData(userData.UserName);
     showToasterMessage({ messageType: "success", description: "Bet placed successfully" });
   };
   
@@ -240,6 +240,7 @@ const BetSlip: React.FC = () => {
 
           const canPlaceBet = checkBetCondition();
           if (canPlaceBet) {
+            console.log("GHEEEEEE")
             placeBet();
 
           }
@@ -414,7 +415,9 @@ const BetSlip: React.FC = () => {
             <button
               className="inline-block relative overflow-hidden transition duration-150 ease-in-out col-span-3 w-full text-[10px] font-semibold rounded-[4px] bg-clearBtnGrd text-text_Quaternary leading-4 py-2 cursor-pointer"
               type="button"
-              onClick={() => setSum(0)}
+              onClick={() => {
+                // setMatchedBets({betOdds,amount:0})
+                setSum(0)}}
             >
               CLEAR
             </button>
