@@ -23,7 +23,8 @@ export const API_ENDPOINTS = {
     LOGOUT:`${url3}logout_api`,
     CASINO_HISTORY: `${url3}casino_history_api`,
     SCORECARDS: `${url}?filepath=score_card`,
-    PLACEBET:`${url3}`
+    PLACEBET:`${url3}`,
+    CASINO_SETTLEMENT: `${url3}qtech_bet_history_api`,
 
 }
 

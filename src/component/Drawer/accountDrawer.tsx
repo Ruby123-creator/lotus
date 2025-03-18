@@ -73,6 +73,12 @@ const drawerElement = [
         id:25,
         route:"/casino-report"
     },
+    {
+        title:"Casino Settlement",
+        icon: <GrDocumentTransfer size={20}/>,
+        id:25,
+        route:"/casino-settlement"
+    },
 ]
 },
 // {
