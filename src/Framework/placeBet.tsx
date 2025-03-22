@@ -5,7 +5,18 @@ import { API_ENDPOINTS } from './utils/api-endpoints';
 import { useUI } from '../context/ui.context';
 
 const placingBet = async (data: any) => {
-  const response = await axios.post(`${API_ENDPOINTS.PLACEBET}${data?.sport}/place_bet_api`, data?.data);
+  let val;
+  if(data?.sport === 'horseRacing_racecard'){
+    val = "horse";
+   }else if(data?.sport === 'greyhound_racecard'){
+     val = "greyhound";
+     
+   }
+   else{
+     val = data?.sport;
+   }
+  console.log(data,"check:::::::::::::")
+  const response = await axios.post(`${API_ENDPOINTS.PLACEBET}${val}/place_bet_api`, data?.data);
   return response.data;
 };
 
