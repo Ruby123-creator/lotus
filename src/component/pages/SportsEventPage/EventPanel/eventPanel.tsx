@@ -11,10 +11,9 @@ import PageLoader from '../../../common/pageLoader';
 
 const EventPanel: React.FC = () => {
   const { sport, eventId }: any = useParams();
-  const [val,setValue] = useState('');
 
 
-     const {data,isLoading,isError} = useSportDetailsById({id:eventId,sport:val});
+     const {data,isLoading,isError} = useSportDetailsById({id:eventId,sport});
     
      
      
