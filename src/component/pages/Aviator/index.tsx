@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useUI } from '../../../context/ui.context';
 
 const AviatorComp: React.FC = () => {
-     // aviator 1.0x gap 0.5x
+
+
+
+  // Generate token and set initial iframeSrc
+ 
+
+  const [iframeSrc, setIframeSrc] = useState('');
+
+  
+
+  useEffect(()=>{
+      const setUrl = ()=>{
+        const token = localStorage.getItem('accessToken');
+        const childWebsiteURL = `https://aviator-flame.vercel.app?token=${token}`; 
+        setIframeSrc(childWebsiteURL);
+      }
+      setUrl()
+  },[])
+
   return (
     <div className="flex flex-col  transition-all lg:pt-[110px] ease-in-out duration-100 pt-0">
     <div className="flex items-start justify-start w-full ">
@@ -9,11 +28,17 @@ const AviatorComp: React.FC = () => {
             <div></div>
             <div className="bg-transparent w-full h-full">
                 <div className="  w-full flex h-[calc(100dvh-42px)] lg:h-[calc(100dvh-54px)]">
-                  
-                  <iframe
-                        src="https://live.fantasylineups.com/?host_id=diamond222&amp;token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTU1Y2UwNTcxZGU1OTExNjIyNGNhNDkiLCJpYXQiOjE3MzQ2OTUzMDIsImV4cCI6MTczNTMwMDEwMn0.yEFTrajM-k30b9eQFrswxyrN_Njv3CU4Z3YzPrSK9F4"
-                        className="w-full h-full flex-grow no-scrollbar" allowFullScreen={true}
-                        aria-hidden="true"></iframe></div>
+                <iframe
+               
+                id="iframe-id"
+                src={iframeSrc}
+                width="800"
+                height="600"
+                title="Second Website"
+                className="w-full h-full flex-grow no-scrollbar" allowFullScreen={true}
+                        aria-hidden="true"
+            ></iframe>
+                 </div>
             </div>
         </div>
     </div>
