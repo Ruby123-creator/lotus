@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import SidebarComp from "../Home/sidebar";
 import RightDeskSidebar from "../../common/RightDeskSidebar.tsx";
 import BankDetails from "./bankInfo";
+import WithdrawHistory from "./withdrawHistory";
+import { useWithdrawAmount } from "../../../Framework/transfer";
 
 const WithdrawComponent: React.FC = () => {
   const [toggle,setToggle] = useState(0);
+ 
   return (
     <div className="flex flex-col transition-all lg:pt-[110px] ease-in-out duration-100 pt-[94px]">
       <div className="flex items-start justify-start w-full lg:px-12 xl:px-20 xlg:px-24">
@@ -36,7 +39,7 @@ const WithdrawComponent: React.FC = () => {
                   className="relative flex w-[100%] rounded-lg border shadow bg-bg_Quaternary overflow-clip undefined"
                 >
                   {
-                    ["Use New Account","Use Previous Account"].map((val,i)=>{
+                    ["Withdrawal Request","Withdrawal History"].map((val,i)=>{
                       return( <button
                         key={"account"+i}
 
@@ -55,7 +58,7 @@ const WithdrawComponent: React.FC = () => {
               </div>
             </div>
             <div className="w-full flex items-center gap-x-2 overflow-x-auto scroll-smooth no-scrollbar whitespace-nowrap cursor-pointer"></div>
-            <BankDetails active={toggle}/>
+            {toggle === 0 ? <BankDetails active={toggle}/>: <WithdrawHistory/>} 
           </div>
         </div>
         <RightDeskSidebar />

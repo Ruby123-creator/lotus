@@ -59,6 +59,18 @@ const Header: React.FC = () => {
   {
     label: <span onClick={()=>Navigate('/casino-settlement')}>Casino Settlement</span>,
    
+    key:45,
+    
+  },
+  {
+    label: <span onClick={()=>Navigate('/deposit')}>Deposit</span>,
+   
+    key:44,
+    
+  },
+  {
+    label: <span onClick={()=>Navigate('/withdraw')}>Withdraw</span>,
+   
     key:44,
     
   },

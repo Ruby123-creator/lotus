@@ -91,7 +91,8 @@ const {data: userData} = useAdminDetails({isLogin:isLoginAsUser,username:val?.us
          <Route path='/declare-bets'  element={<PrivateRoute element={<DeclareBets />} />}/>
          <Route path='/casino-report' element={<PrivateRoute element={<CasinoReport/>}/>}/>
          <Route path='/casino-settlement' element={<PrivateRoute element={<CasinoSettlement/>}/>}/>
-
+         <Route path='/withdraw'  element={<PrivateRoute element={<WithdrawComponent />} />}/>
+         <Route path='/deposit'  element={<PrivateRoute element={<DepositComponent />} />}/>
          <Route path='/settings'  element={<PrivateRoute element={<TimeSetting />} />}/>
       </Routes>
     </Layout>

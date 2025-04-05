@@ -25,7 +25,14 @@ export const API_ENDPOINTS = {
     SCORECARDS: `${url}?filepath=score_card`,
     PLACEBET:`${url3}`,
     CASINO_SETTLEMENT: `${url3}qtech_bet_history_api`,
-
+    DEPOSIT_AMOUNT: `${url3}deposit_amount_api`,
+    UPI_DETAILS: `${url3}get_upi_details_api`,
+    QR_DETAILS: `${url3}qr_code_api`,
+    ACCOUNT_DETAILS: `${url3}get_accounts_api`,
+    DEPOSIT_HISTORY: `${url3}deposit_history`,
+    WITHDRAW_AMOUNT: `${url3}withdraw_api`,
+    WITHDRAW_HISTORY: `${url3}withdraw_history_api`,
+    PENDING_TRANSACTION :`${url3}pending_api`,
 }
 
 // Back
