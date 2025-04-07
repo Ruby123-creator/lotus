@@ -18,7 +18,7 @@ const DetailsFilled = () => {
       setSum(netSum);
  }
     return (
-        <div className='py-2'>
+        <div className='py-2 w-full'>
         <div className="w-full mt-2.5 py-[15px] rounded-lg bg-bg_Quaternary px-3">
           <div className="font-lato font-bold text-text_Ternary text-base leading-5">
             <p>
@@ -111,30 +111,7 @@ const DetailsFilled = () => {
             <span className="text-text_Danger text-xs font-lato font-[450] leading-4"></span>
           </div>
         </div>
-        <div className="flex items-start justify-center gap-x-2 py-3 px-5">
-          <div className="inline-flex items-center">
-            <label
-              className="relative flex cursor-pointer items-center rounded-full  bg-bg_Quinary "
-              htmlFor="blue"
-            >
-              <input
-                className="before:content[''] before:bg-bg_Secondary3 rounded-md peer relative  cursor-pointer appearance-none border border-success transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-max before:w-max before:-translate-x-2/4 before:-translate-y-2/4 before:opacity-0 before:transition-opacity checked:border-success checked:bg-bg_Success hover:before:opacity-10 h-5 w-5"
-                id="blue"
-                type="checkbox"
-                checked={true}
-              />
-              <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-text_Quaternary opacity-0 transition-opacity peer-checked:opacity-100">
-                
-              </span>
-            </label>
-          </div>
-          <span className="text-sm text-textColor font-lato font-[400] leading-5">
-            I have read and agree with{" "}
-            <span className="text-text_Primary underline text-sm font-lato font-[400] leading-4 cursor-pointer">
-              the terms of payment and withdrawal policy.
-            </span>
-          </span>
-        </div>
+       
         <div className="w-full text-center py-4 px-2">
           <button
             disabled={false}

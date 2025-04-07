@@ -1,7 +1,7 @@
 import React from "react";
 import RightDeskSidebar from "../../common/RightDeskSidebar.tsx";
 import SidebarComp from "../Home/sidebar";
-import AccountDetails from "./AccountDetails";
+
 import DepositDetails from "./depositAmount";
 
 // import DepositDetails from "./depositAmount.js";

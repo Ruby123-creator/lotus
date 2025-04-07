@@ -3,7 +3,7 @@ import { useUI } from '../../../context/ui.context';
 
 const AviatorComp: React.FC = () => {
 
-
+  const {uniqueId , userData} = useUI();
 
   // Generate token and set initial iframeSrc
  
@@ -13,13 +13,15 @@ const AviatorComp: React.FC = () => {
   
 
   useEffect(()=>{
-      const setUrl = ()=>{
-        const token = localStorage.getItem('accessToken');
-        const childWebsiteURL = `https://tonyexch.com/token=${token}`; 
-        setIframeSrc(childWebsiteURL);
-      }
-      setUrl()
-  },[])
+    const setUrl = ()=>{
+      const token = `${userData?.UserName}$${uniqueId}`;
+      console.log(token,uniqueId,"CHECKEDDD");
+
+      const childWebsiteURL = `https://tonyexch.com?token=${token}`; 
+      setIframeSrc(childWebsiteURL);
+    }
+    setUrl()
+},[])
 
   return (
     <div className="flex flex-col  transition-all lg:pt-[110px] ease-in-out duration-100 pt-0">

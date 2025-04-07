@@ -36,7 +36,7 @@ const WithdrawComponent: React.FC = () => {
               <div className=" font-lato text-sm w-full">
                 <div
                   id="step-selectMode"
-                  className="relative flex w-[100%] rounded-lg border shadow bg-bg_Quaternary overflow-clip undefined"
+                  className="relative flex w-[100%] px-2 rounded-lg border shadow bg-bg_Quaternary overflow-clip undefined"
                 >
                   {
                     ["Withdrawal Request","Withdrawal History"].map((val,i)=>{
