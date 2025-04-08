@@ -3,6 +3,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Product } from '../types/Product';
 import { API_ENDPOINTS } from './utils/api-endpoints';
 import { useUI } from '../context/ui.context';
+import { showToasterMessage } from './utils/constant';
 
 const placingBet = async (data: any) => {
   let val;
@@ -27,11 +28,14 @@ export const usePlaceBet = () => {
   return useMutation({
     mutationFn: placingBet, // Function that makes the API call
     onSuccess: (data) => {
-      
+      showToasterMessage({ messageType: "success", description: "Bet placed successfully" });
+
       queryClient.invalidateQueries({ queryKey: ["currentbets-detail"] });
       console.log("Bet placed successfully!", data);
     },
     onError: (error) => {
+      showToasterMessage({ messageType: "error", description: "Error Occurred" });
+
       console.error("Error placing bet:", error);
     },
   });

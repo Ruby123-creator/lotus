@@ -68,6 +68,18 @@ const drawerElement = [
         route:"/account-statement"
     },
     {
+        title:"Deposit",
+        icon: <img src="/icons/red_deposit.svg"/>,
+        id:21,
+        route:"/deposit"
+    },
+    {
+        title:"Withdraw",
+        icon: <img src="/icons/red_withdraw.svg"/>,
+        id:22,
+        route:"/withdraw"
+    },
+    {
         title:"Casino Report",
         icon: <GrDocumentTransfer size={20}/>,
         id:25,
