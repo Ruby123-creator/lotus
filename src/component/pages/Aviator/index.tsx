@@ -29,15 +29,16 @@ const AviatorComp: React.FC = () => {
         <div className="w-full md:mt-[0px]   lg:overflow-auto" style={{minHeight: "calc(-110px + 100dvh)"}}>
             <div></div>
             <div className="bg-transparent w-full h-full">
-                <div className="  w-full flex h-[calc(100dvh-42px)] lg:h-[calc(100dvh-54px)]">
+                <div className="  w-full flex h-[calc(100dvh-42px)] lg:h-[calc(100dvh-20px)]">
                 <iframe
                
                 id="iframe-id"
                 src={iframeSrc}
+               
                 width="800"
-                height="600"
-                title="Second Website"
-                className="w-full h-full flex-grow no-scrollbar" allowFullScreen={true}
+                height="900"
+                title="Aviator Website"
+                className="w-full h-full flex-grow no-scrollbar aviator" allowFullScreen={true}
                         aria-hidden="true"
             ></iframe>
                  </div>

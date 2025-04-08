@@ -10946,6 +10946,7 @@ span.ripple {
     .xs\:text-xs {
         font-size: .75rem
     }
+    
 }
 
 @media (min-width:430px) {
@@ -10956,6 +10957,10 @@ span.ripple {
     .xsm\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr))
     }
+     .aviator{
+            position: absolute;
+            top:"90px"
+        }
 }
 
 @media (min-width:640px) {
@@ -11129,6 +11134,10 @@ span.ripple {
 
     .sm\:text-xs {
         font-size: .75rem
+    }
+    .aviator{
+        position: absolute;
+        top:"90px"
     }
 }
 
@@ -13042,6 +13051,7 @@ span.ripple {
             letter-spacing: 0px;
             padding: 4px 0;
         }
+       
     }
     
     
@@ -13125,4 +13135,16 @@ span.ripple {
       .custom-tabs .ant-tabs-tab-btn:hover{
         color: var(--color-primary) !important;
 
+      }
+
+
+      .aviator {
+        position: absolute;
+        top: 130px; /* default for larger screens */
+      }
+      
+      @media screen and (max-width: 500px) {
+        .aviator {
+          top: 90px; /* override for small screens */
+        }
       }
